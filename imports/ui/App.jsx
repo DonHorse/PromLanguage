@@ -2,7 +2,7 @@ import React from 'react';
 import { Article } from "./article";
 import { useTracker } from 'meteor/react-meteor-data';
 import { ArticleCollection } from "../api/ArticleCollection";
-import {ArticleForm, TaskForm} from './ArticleForm'
+import { ArticleForm } from './ArticleForm'
 
 
 export const App = () => {
@@ -12,7 +12,7 @@ export const App = () => {
     <div>
         <h1>Bienvenue sur PromeoLanguage !</h1>
 
-        <TaskForm/>
+        <ArticleForm/>
 
         <ul>
             { article.map(article => <Article key={article._id} article={article}/>)}
