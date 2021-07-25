@@ -9,14 +9,28 @@ export const App = () => {
     const article = useTracker(() => ArticleCollection.find({}, { sort: { createdAt: -1 }}).fetch());
 
     return(
-    <div>
-        <h1>Bienvenue sur PromeoLanguage !</h1>
+        <div className="app">
+            <header>
+                <div className="app-bar">
+                    <div className="app-header">
+                        <h1>Bienvenue sur PromeoLanguage !</h1>
+                    </div>
+                </div>
+            </header>
 
-        <ArticleForm/>
+            <div className="main">
 
-        <ul>
-            { article.map(article => <Article key={article._id} article={article}/>)}
-        </ul>
-    </div>
+                <ArticleForm/>
+
+                <ul className="article">
+                    { article.map(article =>
+                        <Article
+                            key={article._id}
+                            article={article}
+                        />
+                    )}
+                </ul>
+            </div>
+        </div>
     );
 };
