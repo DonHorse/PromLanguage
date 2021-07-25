@@ -31,7 +31,7 @@ export const ArticleForm = () => {
             />
 
             <input
-                type="text"
+                type="textarea"
                 placeholder="Entrer le contenu de votre article"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
