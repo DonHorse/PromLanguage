@@ -1,7 +1,7 @@
 body {
   font-family: sans-serif;
   background-color: #315481;
-  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  background-image: linear-gradient(to bottom, #0080ff, red 100%);
   background-attachment: fixed;
 
   position: absolute;
@@ -125,4 +125,8 @@ header {
 .article > li > button {
   justify-self: flex-end;
   background-color: #ff3046;
+}
+#promeo_logo{
+  max-width: 100%;
+  height: auto;
 }
