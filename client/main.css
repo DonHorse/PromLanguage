@@ -38,3 +38,6 @@ body {
 .login-form > div > button {
   background-color: #62807e;
 }
+.task-form {
+  margin-top: 1rem;
+}

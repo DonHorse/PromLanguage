@@ -1,20 +1,18 @@
 import { Meteor } from 'meteor/meteor';
-import { LinksCollection } from '/imports/api/links';
-import { Accounts } from 'meteor/accounts-base';
+import { ArticleCollection } from '/imports/api/ArticleCollection';
 
-function insertLink({ title, url }) {
-  LinksCollection.insert({title, url, createdAt: new Date()});
-}
-const SEED_USERNAME = 'root';
-const SEED_PASSWORD = 'root';
+const insertArticle = articleTitle => ArticleCollection.insert({ title: articleTitle });
 
 Meteor.startup(() => {
-
-  if (!Accounts.findUserByUsername(SEED_USERNAME)) {
-    Accounts.createUser({
-      username: SEED_USERNAME,
-      password: SEED_PASSWORD,
-    });
+  if (ArticleCollection.find().count() === 0) {
+    [
+      'First Article',
+      'Second Article',
+      'Third Article',
+      'Fourth Article',
+      'Fifth Article',
+      'Sixth Article',
+      'Seventh Article'
+    ].forEach(insertArticle)
   }
-
 });
