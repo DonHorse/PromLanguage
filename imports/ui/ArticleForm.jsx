@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ArticleCollection } from "../api/ArticleCollection";
 
-export const ArticleForm = () => {
+export const ArticleForm = ({ user }) => {
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
 
@@ -13,7 +13,8 @@ export const ArticleForm = () => {
         ArticleCollection.insert({
             title: title.trim(),
             text: text.trim(),
-            createdAt: new Date()
+            createdAt: new Date(),
+            userId: user._id
         });
 
         setTitle("");

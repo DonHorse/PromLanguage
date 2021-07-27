@@ -1,9 +1,27 @@
 import { Meteor } from 'meteor/meteor';
 import { ArticleCollection } from '/imports/api/ArticleCollection';
+import { Accounts } from 'meteor/accounts-base';
 
-const insertArticle = articleTitle => ArticleCollection.insert({ title: articleTitle });
+const insertArticle = (articleTitle, user) =>
+    ArticleCollection.insert({
+      title: articleTitle ,
+      userId : user._id,
+      createdAt : new Date(),
+    });
+
+const SEED_USERNAME = 'Admin';
+const SEED_PASSWORD = 'root';
 
 Meteor.startup(() => {
+  if (!Accounts.findUserByUsername(SEED_USERNAME)) {
+    Accounts.createUser({
+      username: SEED_USERNAME,
+      password: SEED_PASSWORD,
+    });
+  }
+
+  const user = Accounts.findUserByUsername(SEED_USERNAME);
+
   if (ArticleCollection.find().count() === 0) {
     [
       'First Article',
@@ -15,4 +33,5 @@ Meteor.startup(() => {
       'Seventh Article'
     ].forEach(insertArticle)
   }
+
 });
