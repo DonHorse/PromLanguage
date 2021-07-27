@@ -13,7 +13,8 @@ export const App = () => {
             <header>
                 <div className="app-bar">
                     <div className="app-header">
-                        <h1><img src="./img/promeo_logo.png" alt=" logo Promeo " id="promeo_logo"/> Bienvenue sur PromeoLanguage !</h1>
+                        <h1><img src="imports/ui/img/promeo_logo.png" alt=" logo Promeo " id="promeo_logo"/> Bienvenue sur PromeoLanguage !</h1>
+
                     </div>
                 </div>
             </header>
