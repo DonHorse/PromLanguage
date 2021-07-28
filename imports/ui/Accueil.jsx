@@ -13,7 +13,7 @@ export const App = () => {
     const article = useTracker(() => ArticleCollection.find({}, { sort: { createdAt: -1 }}).fetch());
 
     const logout = () => Meteor.logout();
-/*revoir pour ajout menu et route */
+    /*revoir pour ajout menu et route */
     return(
         <div className="app">
             <header>
@@ -38,10 +38,10 @@ export const App = () => {
 
                         <ul className="article">
                             { article.map(article =>
-                            <Article
-                                key={article._id}
-                                article={article}
-                            />
+                                <Article
+                                    key={article._id}
+                                    article={article}
+                                />
                             )}
                         </ul>
                     </Fragment>
