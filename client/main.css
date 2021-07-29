@@ -32,7 +32,12 @@ button:focus {
   flex-direction: column;
   height: 100vh;
 }
-
+.Route{
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .app-header {
   flex-grow: 1;
   white-space: nowrap;

@@ -12,7 +12,7 @@ const insertArticle = (articleTitle, user) =>
 const SEED_USERNAME = 'Admin';
 const SEED_PASSWORD = 'root';
 
-Meteor.startup(() => {
+/*Meteor.startup(() => {
   if (!Accounts.findUserByUsername(SEED_USERNAME)) {
     Accounts.createUser({
       username: SEED_USERNAME,
@@ -35,3 +35,4 @@ Meteor.startup(() => {
   }
 
 });
+*/
